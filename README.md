@@ -1,8 +1,25 @@
 # K8s-nti-lab2
 1- How many Namespaces exist on the system?
-
+```
+5
+default                Active   7d2h
+kube-node-lease        Active   7d2h
+kube-public            Active   7d2h
+kube-system            Active   7d2h
+kubernetes-dashboard   Active   5h20m
+```
 2- How many pods exist in the kube-system namespace?
-
+```
+7
+NAME                               READY   STATUS    RESTARTS     AGE
+coredns-7db6d8ff4d-vlftc           1/1     Running   1 (5d ago)   7d2h
+etcd-minikube                      1/1     Running   1 (5d ago)   7d2h
+kube-apiserver-minikube            1/1     Running   1 (5d ago)   7d2h
+kube-controller-manager-minikube   1/1     Running   1 (5d ago)   7d2h
+kube-proxy-hc454                   1/1     Running   1            7d2h
+kube-scheduler-minikube            1/1     Running   1 (5d ago)   7d2h
+storage-provisioner                1/1     Running   3            7d2h
+```
 3- Create a deployment with
 
 Name: beta
@@ -38,7 +55,9 @@ values: blue
 7- Create a deployment named "nginx" with image "nginx", replicas 3 on the "iti" namespace
 
 8- How many pods have been created within the nginx deployment and why?
-
+```
+2 because resourceqouta limit pod to 2
+```
 9- Create LimitRange for the "gold" namespace with memory (limit: 500 Mi, request: 200 Mi)
 
 10- Create a pod named "ingot" in the "gold" namespace
