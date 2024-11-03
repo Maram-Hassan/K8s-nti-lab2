@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ingot
+  namespace: gold
+spec:
+  containers:
+  - name: ingot-container
+    image: nginx  
+    resources:
+      requests:
+        memory: "200Mi"
+      limits:
+        memory: "500Mi"
